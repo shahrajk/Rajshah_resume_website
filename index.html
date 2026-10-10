@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7faf7">
+<meta name="description" content="Raj Shah — Technical Specialist and Senior Full Stack Engineer with 8+ years of experience across BFSI, healthcare, cloud, mobile, distributed systems and AI engineering.">
+<title>Raj Shah | Senior Full Stack Engineer</title>
+<style>
+:root {
+  --green:#087f5b; --dark:#075b43; --light:#e8f6ed;
+  --bg:#f7faf7; --text:#192b25; --muted:#65756c;
+  --border:#e1eae4; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:21px;font-weight:900;letter-spacing:-1px}
+.logo span,.green{color:var(--green)}
+.links{display:flex;flex-wrap:wrap;gap:18px;font-size:12px;font-weight:700;color:var(--muted)}
+.links a:hover{color:var(--green)}
+.hero{padding:85px 0;background:radial-gradient(ellipse at 85% 15%,#dcf3e4,transparent 37%),linear-gradient(135deg,#fff,#f0faf3);border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .7fr;gap:45px;align-items:center}
+.eyebrow{display:inline-block;background:var(--light);color:var(--dark);padding:6px 13px;border-radius:30px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+h1{font-size:clamp(40px,5.5vw,66px);line-height:1.08;letter-spacing:-2.5px;margin-bottom:22px}
+.hero p{color:var(--muted);font-size:16px}
+.buttons{display:flex;flex-wrap:wrap;gap:11px;margin:25px 0}
+.btn{display:inline-block;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:750;border:1px solid #cbded1}
+.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.primary:hover{background:var(--dark)}
+.secondary{background:white;color:var(--dark)}
+.card{background:#fff;border:1px solid var(--border);border-radius:17px;padding:25px}
+.avatar{width:68px;height:68px;border-radius:19px;background:var(--light);color:var(--green);display:grid;place-items:center;font-size:25px;font-weight:900;margin-bottom:17px}
+.card h2{font-size:23px;letter-spacing:-.5px}
+.card>p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.detail{border-top:1px solid var(--border);padding:10px 0;font-size:12px}
+.detail strong,.detail span{display:block}
+.detail span{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:25px 0}
+.stat{text-align:center;background:#fff;border:1px solid var(--border);border-radius:13px;padding:19px 10px}
+.stat strong{display:block;color:var(--green);font-size:29px;line-height:1.4}
+.stat span{font-size:11px;color:var(--muted)}
+section{padding:72px 0}
+.heading{max-width:760px;margin-bottom:30px}
+.label{color:var(--green);font-size:11px;letter-spacing:1.5px;font-weight:850;text-transform:uppercase;margin-bottom:8px}
+.heading h2{font-size:clamp(28px,4vw,39px);line-height:1.2;letter-spacing:-1.2px;margin-bottom:12px}
+.heading p,.muted{font-size:14px;color:var(--muted)}
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.panel{background:#fff;border:1px solid var(--border);border-radius:15px;padding:25px}
+.panel h3{font-size:18px;margin-bottom:10px}
+.panel p{font-size:13px;color:var(--muted)}
+.checks{list-style:none;display:grid;gap:9px;margin-top:12px}
+.checks li{font-size:13px}
+.checks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+.domains{background:#fff;border-block:1px solid var(--border)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.domain{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;transition:.2s}
+.domain:hover{border-color:#a6d5b7;transform:translateY(-3px)}
+.domain.feature{background:#f0faf3;border-color:#b9ddc4}
+.icon{width:40px;height:40px;display:grid;place-items:center;background:var(--light);border-radius:12px;color:var(--green);font-weight:900;margin-bottom:13px}
+.domain h3{font-size:16px;margin-bottom:7px}
+.domain p{font-size:12px;color:var(--muted)}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skill{background:#fff;border:1px solid var(--border);border-radius:14px;padding:23px}
+.skill h3{font-size:16px;margin-bottom:7px}
+.skill>p{font-size:12px;color:var(--muted);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-size:11px;font-weight:650;color:#365746;background:#f0f6f1;border:1px solid #e0ebe2;padding:5px 9px;border-radius:6px}
+.experience{background:#fff;border-block:1px solid var(--border)}
+.timeline{border-left:2px solid #d8eadf;margin-left:7px;padding-left:27px}
+.job{position:relative;padding-bottom:32px}
+.job:last-child{padding-bottom:0}
+.job:before{content:"";position:absolute;left:-34px;top:6px;width:11px;height:11px;background:var(--green);border:3px solid #fff;outline:2px solid var(--green);border-radius:50%}
+.job-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.job h3{font-size:18px}
+.job h4{color:var(--green);font-size:13px}
+.date{background:var(--light);color:var(--dark);border-radius:20px;padding:4px 9px;font-size:10px;font-weight:800}
+.job p,.job li{font-size:12px;color:var(--muted)}
+.job ul{margin:10px 0 0 18px}
+.job li{margin-bottom:5px}
+.project{margin-top:14px;background:#f6faf7;border:1px solid var(--border);border-radius:11px;padding:17px}
+.project h4{font-size:14px;margin-bottom:4px}
+.project .stack{font-size:11px;color:var(--green);font-weight:750;margin-bottom:7px}
+.achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.achievement{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px}
+.achievement strong{display:block;font-size:30px;line-height:1.4;color:var(--green);letter-spacing:-1px}
+.achievement h3{font-size:14px;margin:7px 0}
+.achievement p{font-size:12px;color:var(--muted)}
+.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.entry{padding:13px 0;border-bottom:1px solid var(--border)}
+.entry:last-child{border:0}
+.entry strong{display:block;font-size:14px}
+.entry span{display:block;color:var(--muted);font-size:12px}
+.contact{background:linear-gradient(130deg,#087f5b,#075b43);border-radius:20px;padding:42px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact h2{font-size:clamp(27px,4vw,38px);line-height:1.2;margin-bottom:10px}
+.contact p{font-size:13px;color:#d9f0e1;max-width:600px}
+.contact .btn{background:#fff;color:var(--dark);white-space:nowrap}
+footer{padding:24px 0;font-size:11px;color:var(--muted)}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:800px){.hero-grid,.two-col{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}.achievement-grid{grid-template-columns:repeat(2,1fr)}.hero{padding:60px 0}}
+@media(max-width:540px){.nav{align-items:flex-start;flex-direction:column;padding:13px 0}.links{gap:8px 13px}.stats{grid-template-columns:repeat(2,1fr)}.grid-3,.skill-grid,.achievement-grid,.lower-grid{grid-template-columns:1fr}section{padding:53px 0}.contact{padding:26px;align-items:flex-start;flex-direction:column}h1{letter-spacing:-1.7px}.hero p{font-size:14px}}
+@media print{nav,.buttons{display:none}.hero{padding:35px 0}section{padding:30px 0}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav">
+    <a class="logo" href="#home">RAJ<span>.</span>SHAH</a>
+    <div class="links">
+      <a href="#about">About</a><a href="#domains">Domains</a>
+      <a href="#skills">Skills</a><a href="#experience">Experience</a>
+      <a href="#achievements">Impact</a><a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Full Stack Engineering · BFSI · AI</div>
+      <h1>Engineering digital products with <span class="green">purpose.</span></h1>
+      <p>
+        I'm Raj Shah, a Technical Specialist and Senior Full Stack Engineer
+        with 8+ years of experience designing, developing, and scaling
+        enterprise web, mobile, cloud-native, and distributed applications.
+        I combine full stack engineering, financial-services technology,
+        cloud platforms, and AI-assisted development to deliver scalable
+        digital solutions.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#experience">Explore my experience ↗</a>
+        <a class="btn secondary" href="#contact">Let's connect</a>
+      </div>
+      <p style="font-size:12px">React · React Native · Node.js · Java · .NET · Azure · AWS · AI Engineering</p>
+    </div>
+    <aside class="card">
+      <div class="avatar">RS</div>
+      <h2>Raj Shah</h2>
+      <p>Technical Specialist | Senior Full Stack Engineer</p>
+      <div class="detail"><strong>Phone</strong><span>+91-8238101741</span></div>
+      <div class="detail"><strong>Email</strong><span>rajshah23471@gmail.com</span></div>
+      <div class="detail"><strong>Current organization</strong><span>Zensar Technologies</span></div>
+      <div class="detail"><strong>Client engagement</strong><span>Investec · Banking & Financial Services</span></div>
+      <div class="detail"><strong>Location</strong><span>Ahmedabad, India</span></div>
+      <div class="detail"><strong>Experience</strong><span>8+ years in software engineering</span></div>
+    </aside>
+  </div>
+</header>
+
+<div class="container stats">
+  <div class="stat"><strong>8+</strong><span>Years of experience</span></div>
+  <div class="stat"><strong>15+</strong><span>Engineering teams reached</span></div>
+  <div class="stat"><strong>60%</strong><span>Reported development-cycle improvement</span></div>
+  <div class="stat"><strong>90%+</strong><span>AI-assisted test-generation accuracy</span></div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Professional summary</div>
+      <h2>From product engineering to enterprise-scale solutions.</h2>
+      <p>Full stack delivery, scalable architecture, cloud-native systems, and AI-powered engineering productivity.</p>
+    </div>
+    <div class="two-col">
+      <article class="panel">
+        <h3>About me</h3>
+        <p>
+          Technical Specialist and Senior Full Stack Engineer with 8+ years
+          of experience across banking and financial services, healthcare,
+          e-commerce, logistics, and inventory management. My technical
+          background spans React, Next.js, React Native, TypeScript, Node.js,
+          Java with Spring Boot, .NET with C#, Python, SQL, REST APIs,
+          GraphQL, microservices, and distributed systems.
+        </p><br>
+        <p>
+          I build secure, maintainable, high-performance applications and
+          contribute across the product lifecycle, from solution design and
+          architecture through development, automated testing, deployment,
+          and optimization. I also apply MCP, LLM integration, RAG concepts,
+          prompt engineering, and AI-assisted workflows to improve delivery
+          efficiency and engineering consistency.
+        </p>
+      </article>
+      <article class="panel">
+        <h3>Core strengths</h3>
+        <ul class="checks">
+          <li>End-to-end full stack product development</li>
+          <li>Enterprise banking and financial application delivery</li>
+          <li>Web and cross-platform mobile architecture</li>
+          <li>REST, GraphQL, microservices and distributed systems</li>
+          <li>Cloud infrastructure, CI/CD and automated testing</li>
+          <li>AI engineering and developer productivity initiatives</li>
+          <li>Technical design, code reviews and mentoring</li>
+          <li>Agile collaboration and continuous improvement</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="domains" id="domains">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Industry domains</div>
+      <h2>Technology aligned with business needs.</h2>
+      <p>Experience across enterprise and customer-facing solutions in multiple industries.</p>
+    </div>
+    <div class="grid-3">
+      <article class="domain"><div class="icon">◈</div><h3>Banking & Financial Services</h3><p>Enterprise banking platforms, financial workflows, corporate banking features and customer-facing digital experiences.</p></article>
+      <article class="domain"><div class="icon">↗</div><h3>Payments & Transactions</h3><p>FX payments, scheduled transfers, transaction workflows, validation, and API-connected financial journeys.</p></article>
+      <article class="domain"><div class="icon">▣</div><h3>Digital Lending</h3><p>Loan origination, evaluation workflows, lifecycle management, and retail and enterprise lending experiences.</p></article>
+      <article class="domain"><div class="icon">▤</div><h3>Corporate Banking</h3><p>Corporate banking applications, business-user workflows, internal tools, and financial information management.</p></article>
+      <article class="domain"><div class="icon">✚</div><h3>Healthcare & Wellness</h3><p>Patient engagement, remote monitoring, medication adherence, wearable integrations, and health-data synchronization.</p></article>
+      <article class="domain"><div class="icon">🛍</div><h3>E-commerce</h3><p>Responsive digital experiences, product workflows, reusable interfaces, and integrated application services.</p></article>
+      <article class="domain"><div class="icon">⇄</div><h3>Logistics</h3><p>Operational workflows, mobile experiences, tracking-oriented interfaces, and process-driven applications.</p></article>
+      <article class="domain"><div class="icon">▦</div><h3>Inventory Management</h3><p>Data-driven business screens, inventory workflows, structured information, and enterprise integrations.</p></article>
+      <article class="domain"><div class="icon">⚙</div><h3>Enterprise & Developer Platforms</h3><p>Micro-frontends, shared design systems, engineering tooling, testing automation, and AI-assisted workflows.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Technical expertise</div>
+      <h2>A broad full stack engineering toolkit.</h2>
+      <p>Frontend and mobile applications, backend services, cloud infrastructure, data platforms, testing, and AI.</p>
+    </div>
+    <div class="skill-grid">
+      <article class="skill">
+        <h3>Frontend Engineering</h3><p>Modern, performant web applications and reusable UI architecture.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript ES6+</span><span class="tag">Redux</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Micro Frontends</span><span class="tag">SSR / ISR</span><span class="tag">Webpack</span></div>
+      </article>
+      <article class="skill">
+        <h3>Mobile Engineering</h3><p>Cross-platform development and mobile application optimization.</p>
+        <div class="tags"><span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">Ionic</span><span class="tag">Cordova</span><span class="tag">Offline-First Architecture</span><span class="tag">Native Modules</span><span class="tag">Performance Optimization</span></div>
+      </article>
+      <article class="skill">
+        <h3>Backend & APIs</h3><p>Application services, API design, and service integration.</p>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">.NET / C#</span><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Python</span><span class="tag">REST APIs</span><span class="tag">GraphQL</span><span class="tag">Microservices</span></div>
+      </article>
+      <article class="skill">
+        <h3>Cloud & DevOps</h3><p>Cloud services, release automation, and deployment pipelines.</p>
+        <div class="tags"><span class="tag">Azure App Services</span><span class="tag">Azure Functions</span><span class="tag">Cosmos DB</span><span class="tag">Azure DevOps</span><span class="tag">AWS EC2</span><span class="tag">AWS Lambda</span><span class="tag">Amazon S3</span><span class="tag">Amazon RDS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span></div>
+      </article>
+      <article class="skill">
+        <h3>Databases & Data</h3><p>Relational and NoSQL data stores, caching, and data modeling.</p>
+        <div class="tags"><span class="tag">MongoDB</span><span class="tag">Cosmos DB</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">Data Modeling</span></div>
+      </article>
+      <article class="skill">
+        <h3>AI Engineering</h3><p>AI-assisted software development and LLM-enabled workflows.</p>
+        <div class="tags"><span class="tag">MCP</span><span class="tag">LLM Integration</span><span class="tag">RAG</span><span class="tag">GitHub Copilot</span><span class="tag">ChatGPT Enterprise</span><span class="tag">Prompt Engineering</span><span class="tag">AI-Assisted Development</span><span class="tag">AI Test Generation</span></div>
+      </article>
+      <article class="skill">
+        <h3>Architecture & Leadership</h3><p>Technical design, scalability, engineering quality, and collaboration.</p>
+        <div class="tags"><span class="tag">System Design HLD/LLD</span><span class="tag">Distributed Systems</span><span class="tag">Scalability</span><span class="tag">Performance Engineering</span><span class="tag">Technical Mentorship</span><span class="tag">Agile / Scrum</span><span class="tag">Architecture Reviews</span></div>
+      </article>
+      <article class="skill">
+        <h3>Testing & Observability</h3><p>Quality engineering, automated validation, and production monitoring.</p>
+        <div class="tags"><span class="tag">Playwright</span><span class="tag">Jest</span><span class="tag">Cypress</span><span class="tag">Postman</span><span class="tag">Dynatrace</span><span class="tag">Regression Testing</span><span class="tag">CI Quality Gates</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Career history</div>
+      <h2>Professional experience & key projects.</h2>
+      <p>Progression from mobile engineering into senior full stack delivery and enterprise technical responsibilities.</p>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="job-head"><div><h3>Zensar Technologies</h3><h4>Technical Specialist</h4></div><span class="date">Sep 2024 – Present</span></div>
+        <p>Hands-on full stack engineering · Client engagement: Investec</p>
+        <ul>
+          <li>Lead and contribute to full stack development for enterprise banking platforms serving international customers.</li>
+          <li>Drive technical design decisions across frontend architecture, backend integration, cloud delivery, and testing automation.</li>
+          <li>Collaborate with product, engineering, and business stakeholders to deliver scalable financial solutions.</li>
+          <li>Contribute to code reviews, technical governance, mentoring, and engineering productivity initiatives.</li>
+        </ul>
+        <div class="project">
+          <h4>Investec — Banking & Financial Services</h4>
+          <p class="stack">React · React Native · .NET · Azure · Azure DevOps · Jenkins · Playwright · Dynatrace</p>
+          <ul>
+            <li>Contributed to end-to-end development of core banking applications across cross-platform mobile apps and backend services.</li>
+            <li>Worked on digital lending workflows covering loan origination, evaluation, and lifecycle management.</li>
+            <li>Engineered Financial Transaction Desk (FTD) functionality and FX payment and scheduled transfer workflows.</li>
+            <li>Built reusable micro-frontend architecture and shared design-system components to improve consistency and efficiency.</li>
+            <li>Improved release quality through automated testing, CI/CD practices, and production monitoring.</li>
+            <li>Participated in architecture reviews, technical design, and performance optimization across web and mobile.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h4>AI-Driven Development Initiative</h4>
+          <p class="stack">React · TypeScript · MCP · Azure DevOps · Playwright · ChatGPT Enterprise</p>
+          <ul>
+            <li>Designed AI-assisted software development workflows using MCP and enterprise AI platforms.</li>
+            <li>Reduced development cycle time by 60% through workflow automation and AI-powered engineering practices.</li>
+            <li>Automated test generation, achieving reported accuracy above 90% and reducing manual regression effort.</li>
+            <li>Established reusable AI engineering standards adopted across 15+ engineering teams.</li>
+            <li>Improved developer productivity, onboarding efficiency, and code quality through reusable AI frameworks.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-head"><div><h3>EGVerse Technology Solutions Pvt. Ltd.</h3><h4>Senior Developer</h4></div><span class="date">Jun 2022 – Aug 2024</span></div>
+        <p>Full stack healthcare and wellness application development.</p>
+        <ul>
+          <li>Delivered healthcare and wellness platforms supporting patient engagement and remote monitoring.</li>
+          <li>Designed scalable APIs, third-party integrations, and cloud-based solutions.</li>
+          <li>Collaborated across teams to improve reliability, performance, and user experience.</li>
+        </ul>
+        <div class="project">
+          <h4>ConnectedLife Health — Healthcare & Wellness</h4>
+          <p class="stack">React Native · Ionic · Cordova · Node.js · Firebase · MongoDB · Fitbit API</p>
+          <ul>
+            <li>Developed mobile and full stack features supporting patient monitoring and medication adherence.</li>
+            <li>Built backend services and integrations for secure synchronization of health data.</li>
+            <li>Integrated Fitbit APIs for health tracking and analytics.</li>
+            <li>Implemented notification, scheduling, and monitoring workflows for remote healthcare programs.</li>
+            <li>Enhanced application performance and reliability across Android and iOS.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-head"><div><h3>Agile Infoways Pvt. Ltd.</h3><h4>Software Engineer</h4></div><span class="date">Oct 2020 – Jun 2022</span></div>
+        <ul>
+          <li>Developed cross-platform mobile and web applications for global clients.</li>
+          <li>Built reusable UI components, backend integrations, and scalable application features.</li>
+          <li>Contributed to solution architecture, performance optimization, and production deployments.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head"><div><h3>Virtual Height IT Services Pvt. Ltd.</h3><h4>Software Engineer</h4></div><span class="date">Jan 2019 – Aug 2020</span></div>
+        <ul>
+          <li>Developed and maintained mobile and web solutions across multiple domains.</li>
+          <li>Implemented REST API integrations, authentication flows, and application performance improvements.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head"><div><h3>iTechNotion IT Solutions LLP</h3><h4>Associate Software Engineer</h4></div><span class="date">Jul 2018 – Jan 2019</span></div>
+        <ul>
+          <li>Developed and maintained React Native applications.</li>
+          <li>Collaborated with senior engineers on feature implementation, testing, and deployment activities.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Achievements & impact</div>
+      <h2>Engineering outcomes that matter.</h2>
+      <p>Selected delivery, AI productivity, and professional achievement highlights.</p>
+    </div>
+    <div class="achievement-grid">
+      <article class="achievement"><strong>60%</strong><h3>Faster development cycle</h3><p>AI-assisted engineering and automated workflows reduced development time.</p></article>
+      <article class="achievement"><strong>90%+</strong><h3>Test-generation accuracy</h3><p>AI-supported test creation helped improve quality workflows and reduce repetitive testing.</p></article>
+      <article class="achievement"><strong>15+</strong><h3>Teams reached</h3><p>Reusable AI engineering standards and workflows adopted across engineering teams.</p></article>
+      <article class="achievement"><strong>90%</strong><h3>Reduced manual regression effort</h3><p>Reported reduction through testing automation and AI-supported validation.</p></article>
+      <article class="achievement"><strong>3 days → 4 hrs</strong><h3>Page implementation</h3><p>Accelerated selected page-building workflows from days to hours.</p></article>
+      <article class="achievement"><strong>1st Place</strong><h3>Zensar F&O Trading Competition 2025</h3><p>Winner among 200+ participants, with a reported return on investment exceeding 150%.</p></article>
+    </div>
+    <p class="muted" style="font-size:11px;margin-top:14px">Performance figures reflect supplied project information; validate them before presenting externally.</p>
+  </div>
+</section>
+
+<section id="education" style="background:#fff;border-block:1px solid var(--border)">
+  <div class="container">
+    <div class="heading">
+      <div class="label">Education & credentials</div>
+      <h2>Education and certifications.</h2>
+    </div>
+    <div class="lower-grid">
+      <article class="panel">
+        <h3>Education</h3>
+        <div class="entry"><strong>Bachelor of Engineering — Information Technology</strong><span>Alpha College of Engineering and Technology · Ahmedabad, India</span><span>2014 – 2018 · CGPA: 7.05</span></div>
+      </article>
+      <article class="panel">
+        <h3>Certifications</h3>
+        <div class="entry"><strong>Microsoft AZ-900</strong><span>Microsoft Azure Fundamentals · <a class="green" href="https://learn.microsoft.com/en-us/users/rajshah-1971/credentials/538af6ff44fbd793" aria-label="AZ-900 certification URL">Certificate Link ↗</a></span></div>
+        <div class="entry"><strong>Microsoft AI-900</strong><span>Microsoft Azure AI Fundamentals · <a class="green" href="https://learn.microsoft.com/en-gb/users/rajshah-1971/credentials/97d29e29895e11f3?ref=https%3A%2F%2Fwww.linkedin.com%2F" aria-label="AI-900 certification URL">Certificate Link ↗</a></span></div>
+        <div class="entry"><strong>Microsoft GH-300</strong><span>GitHub Copilot certification · <a class="green" href="https://learn.microsoft.com/en-us/users/rajshah-1971/credentials/aabd0b92305ede4d?ref=https%3A%2F%2Fwww.linkedin.com%2F" aria-label="GH-300 certification URL">Certificate Link ↗</a></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <h2>Let's build the next great product.</h2>
+        <p>Open to conversations around full stack engineering, React and React Native, enterprise banking platforms, cloud-native systems, and AI-driven engineering productivity.</p>
+        <p style="margin-top:13px">Email: rajshah23471@gmail.com · Phone: +91-8238101741</p>
+      </div>
+      <div class="buttons" style="margin:0">
+        <a class="btn" href="mailto:rajshah23471@gmail.com">Email me ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/raj-shah282" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer">
+    <span>© <span id="year"></span> Raj Shah. All rights reserved.</span>
+    <span>Full Stack Engineering · Financial Services · AI Innovation</span>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
